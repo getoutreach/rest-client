@@ -7,7 +7,7 @@ module RestClient
     include AbstractResponse
 
     def body
-      self
+      @body ||= String.new(self)
     end
 
     def self.create body, net_http_res, args, request
